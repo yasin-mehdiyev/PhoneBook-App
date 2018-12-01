@@ -1,0 +1,41 @@
+﻿<Window x:Name="WindowsAddPerson" x:Class="_27_11_2018.AddPerson"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_27_11_2018"
+        mc:Ignorable="d"
+        Title="AddPerson" Height="422" Width="445.993" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" ContentRendered="WindowsAddPerson_ContentRendered">
+    <Grid Margin="0,0,4.667,0">
+        <Button x:Name="BtnAddPersonButton" Content="Əlavə Et" HorizontalAlignment="Left" Margin="254,347,0,0" VerticalAlignment="Top" Width="119" Height="36" Click="BtnAddPersonButton_Click"/>
+        <Label Content="" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cmbAddPersonCompany" HorizontalAlignment="Left" Margin="26,41,0,0" VerticalAlignment="Top" Width="139" Height="28"
+                  ItemsSource="{Binding Path=Company}"
+                  DisplayMemberPath="Name"
+                  SelectedValuePath="Id"
+                  SelectedValue="{Binding Path=Company}"
+                  />
+
+        <ComboBox x:Name="cmbAddPersonPosition" HorizontalAlignment="Left" Margin="250,43,0,0" VerticalAlignment="Top" Width="139" Height="26"
+                  ItemsSource="{Binding Path=Position}"
+                  DisplayMemberPath="Name"
+                  SelectedValuePath="Id"
+                  SelectedValue="{Binding Path=Position}"
+                  />
+        <Label Content="Şirkət" HorizontalAlignment="Left" Margin="26,10,0,0" VerticalAlignment="Top"/>
+        <Label Content="Vəzifə" HorizontalAlignment="Left" Margin="250,10,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtAddPersonName" HorizontalAlignment="Left" Height="27" Margin="26,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="139"/>
+        <TextBox x:Name="txtAddPersonSurName" HorizontalAlignment="Left" Height="23" Margin="250,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="139"/>
+        <TextBox x:Name="txtAddPersonMobile" HorizontalAlignment="Left" Height="27" Margin="28,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="137"/>
+        <TextBox x:Name="txtAddPersonWorkPhone" HorizontalAlignment="Left" Height="27" Margin="250,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="139"/>
+        <TextBox x:Name="txtAddPersonEmail" HorizontalAlignment="Left" Height="25" Margin="26,291,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="139"/>
+        <Label Content="Ad" HorizontalAlignment="Left" Margin="28,95,0,0" VerticalAlignment="Top"/>
+        <Label Content="Soyad" HorizontalAlignment="Left" Margin="254,99,0,0" VerticalAlignment="Top"/>
+        <Label Content="Mobil" HorizontalAlignment="Left" Margin="28,176,0,0" VerticalAlignment="Top"/>
+        <Label Content="İş telefonu" HorizontalAlignment="Left" Margin="254,176,0,0" VerticalAlignment="Top"/>
+        <Label Content="E-poçt" HorizontalAlignment="Left" Margin="28,260,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="BtnUpdateButton" Click="BtnUpdateButton_Click" Visibility="Hidden"  Content="Yenilə" HorizontalAlignment="Left" Margin="254,346,0,0" VerticalAlignment="Top" Width="119" Height="37"/>
+        <Button x:Name="BtnDeleteButton" Click="BtnDeleteButton_Click" Visibility="Hidden" Content="Silin" HorizontalAlignment="Left" Margin="73,348,0,0" VerticalAlignment="Top" Width="119" Height="35"/>
+
+    </Grid>
+</Window>

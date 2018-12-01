@@ -1,0 +1,40 @@
+﻿<Window x:Class="_27_11_2018.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_27_11_2018"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="541" Width="800">
+    <Grid Margin="0,0,0.333,-51.333">
+        <ComboBox x:Name="cmbCompaniesName" HorizontalAlignment="Left" Margin="52,38,0,0" VerticalAlignment="Top" Width="143" Height="26"
+                  ItemsSource="{Binding Path=Company}"
+                  DisplayMemberPath="Name"
+                  SelectedValuePath="Id"
+                  SelectedValue="{Binding Path=Company}"
+                  />
+        <Label x:Name="lblcompanies" Content="Şirkət Seçin" HorizontalAlignment="Left" Margin="52,7,0,0" VerticalAlignment="Top" Width="77"/>
+        <ComboBox x:Name="cmbPositionsName" HorizontalAlignment="Left" Margin="277,38,0,0" VerticalAlignment="Top" Width="140" Height="26"
+                  ItemsSource="{Binding Path=Position}"
+                  DisplayMemberPath="Name"
+                  SelectedValuePath="Id"
+                  SelectedValue="{Binding Path=Position}"
+                  />
+        <Label x:Name="lblPosition" Content="Vəzifə seçin" HorizontalAlignment="Left" Margin="277,7,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtPersonDetails" HorizontalAlignment="Left" Height="24" Margin="473,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="127"/>
+        <Label x:Name="lblPersonDetails" Content="Ad,Soyad,Telefon" HorizontalAlignment="Left" Margin="473,7,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnSearch" Content="Axtar" HorizontalAlignment="Left" Margin="654,40,0,0" VerticalAlignment="Top" Width="90" Height="24" Click="btnSearch_Click"/>
+        <DataGrid ItemsSource="{Binding Path=VwPerson}" x:Name="dgvPersons" HorizontalAlignment="Left" Height="320" Margin="52,77,0,0" VerticalAlignment="Top" Width="682" SelectedCellsChanged="dgvPersons_SelectedCellsChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Id}" Header="Id" Visibility="Hidden"/>
+                <DataGridTextColumn Binding="{Binding Company}" Header="Şirkət"/>
+                <DataGridTextColumn Binding="{Binding Position}" Header="Vəzifə"/>
+                <DataGridTextColumn Binding="{Binding FullName}" Header="Şəxs"/>
+                <DataGridTextColumn Binding="{Binding Mobile}" Header="Mobil"/>
+                <DataGridTextColumn Binding="{Binding WorkPhone}" Header="İş"/>
+                <DataGridTextColumn Binding="{Binding Email}" Header="E-poçt"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="btnAddPerson" Content="Şəxsin Məlumatı" HorizontalAlignment="Left" Margin="54,432,0,0" VerticalAlignment="Top" Width="113" Height="40" Click="btnAddPerson_Click"/>
+    </Grid>
+</Window>
